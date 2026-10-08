@@ -8,6 +8,8 @@ Official repository for **Immiscible Diffusion Policy: Preserving Multimodal Rob
 
 ## Overview
 
+[![Immiscible Diffusion Policy overview: action-noise assignment and multimodal Push-T rollouts compared with vanilla Diffusion Policy.](assets/fig1_method_overview.png)](assets/fig1_method_overview.pdf)
+
 Robot demonstrations can contain multiple valid ways to complete the same task, such as grasping an object with either hand. Yet a diffusion policy can collapse to one action modality even when the demonstrations are balanced. Our work connects this behavior to mixing between diffusion paths induced by independent action-noise pairing during training.
 
 **Immiscible Diffusion Policy changes how action chunks are paired with Gaussian noise during training.** Within each batch, we:
