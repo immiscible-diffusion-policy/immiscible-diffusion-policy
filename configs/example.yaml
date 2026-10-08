@@ -1,0 +1,14 @@
+# CPU demonstration settings, not a paper reproduction configuration.
+seed: 0
+batch_size: 16
+horizon: 8
+action_dim: 2
+obs_dim: 4
+num_diffusion_steps: 100
+learning_rate: 0.001
+use_immiscible_diffusion: true
+immiscible_start_epoch: 50
+# Set to 49 to demonstrate independent pairing before activation.
+epoch: 50
+# epsilon predicts matched noise; sample predicts the original clean actions.
+prediction_type: epsilon

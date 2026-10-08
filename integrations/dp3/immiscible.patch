@@ -1,0 +1,82 @@
+diff --git a/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/policy/dp3.py b/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/policy/dp3.py
+--- a/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/policy/dp3.py
++++ b/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/policy/dp3.py
+@@ -1,6 +1,7 @@
+ from typing import Dict
+ import math
+ import torch
++from immiscible_diffusion_policy import match_noise
+ import torch.nn as nn
+ import torch.nn.functional as F
+ from einops import rearrange, reduce
+@@ -45,6 +46,8 @@
+         use_pc_color=False,
+         pointnet_type="pointnet",
+         pointcloud_encoder_cfg=None,
++        use_immiscible_diffusion=False,
++        immiscible_start_epoch=50,
+         # parameters passed to step
+         **kwargs,
+     ):
+@@ -131,6 +134,10 @@
+         self.n_obs_steps = n_obs_steps
+         self.obs_as_global_cond = obs_as_global_cond
+         self.kwargs = kwargs
++        self.use_immiscible_diffusion = use_immiscible_diffusion
++        if immiscible_start_epoch < 0:
++            raise ValueError("immiscible_start_epoch must be nonnegative")
++        self.immiscible_start_epoch = immiscible_start_epoch
+ 
+         if num_inference_steps is None:
+             num_inference_steps = noise_scheduler.config.num_train_timesteps
+@@ -266,7 +273,7 @@
+     def set_normalizer(self, normalizer: LinearNormalizer):
+         self.normalizer.load_state_dict(normalizer.state_dict())
+ 
+-    def compute_loss(self, batch):
++    def compute_loss(self, batch, *, epoch=0):
+         # normalize input
+ 
+         nobs = self.normalizer.normalize(batch["obs"])
+@@ -312,6 +319,8 @@
+ 
+         # Sample noise that we'll add to the images
+         noise = torch.randn(trajectory.shape, device=trajectory.device)
++        if self.use_immiscible_diffusion and epoch >= self.immiscible_start_epoch:
++            noise = match_noise(nactions, noise)
+ 
+         bsz = trajectory.shape[0]
+         # Sample a random timestep for each image
+diff --git a/policy/DP3/3D-Diffusion-Policy/train_dp3.py b/policy/DP3/3D-Diffusion-Policy/train_dp3.py
+--- a/policy/DP3/3D-Diffusion-Policy/train_dp3.py
++++ b/policy/DP3/3D-Diffusion-Policy/train_dp3.py
+@@ -198,7 +198,7 @@
+ 
+                     # compute loss
+                     t1_1 = time.time()
+-                    raw_loss, loss_dict = self.model.compute_loss(batch)
++                    raw_loss, loss_dict = self.model.compute_loss(batch, epoch=self.epoch)
+                     loss = raw_loss / cfg.training.gradient_accumulate_every
+                     loss.backward()
+ 
+@@ -268,7 +268,7 @@
+                     ) as tepoch:
+                         for batch_idx, batch in enumerate(tepoch):
+                             batch = dict_apply(batch, lambda x: x.to(device, non_blocking=True))
+-                            loss, loss_dict = self.model.compute_loss(batch)
++                            loss, loss_dict = self.model.compute_loss(batch, epoch=self.epoch)
+                             val_losses.append(loss)
+                             print(f"epoch {self.epoch}, eval loss: ", float(loss.cpu()))
+                             if (cfg.training.max_val_steps
+diff --git a/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/config/robot_dp3.yaml b/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/config/robot_dp3.yaml
+--- a/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/config/robot_dp3.yaml
++++ b/policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/config/robot_dp3.yaml
+@@ -17,6 +17,8 @@
+ 
+ policy:
+   _target_: diffusion_policy_3d.policy.dp3.DP3
++  use_immiscible_diffusion: false
++  immiscible_start_epoch: 50
+   use_point_crop: true
+   condition_type: film
+   use_down_condition: true

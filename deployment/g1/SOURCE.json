@@ -1,0 +1,92 @@
+{
+  "description": "Copied/adapted local research files; source hashes include local modifications and are not historical checkpoint identifiers. Paths are provenance, not runtime dependencies.",
+  "files": {
+    "deployment/g1/idp_g1/infer.py": {
+      "source_path": "g1_dp/g1_dp/infer.py",
+      "source_sha256": "78d78cc149817e746ca07381ed462a7b96b81d111adc11788a993df43d3fb213",
+      "release_sha256": "33b16097ebb47a0a800ba505a730283aeb5cadaebcc1215ec96af0184ce14387",
+      "status": "adapted"
+    },
+    "deployment/g1/idp_g1/g1_real.py": {
+      "source_path": "g1_dp/g1_dp/deploy/g1_real.py",
+      "source_sha256": "bc0edcfed6a4ae2834dce3cf87fa4cf4d04c5f8aa8355419a06b35a798f27826",
+      "release_sha256": "7c19f106fc30c34b8e20801c61b38bb56288c86c8ac4ef4781570de050d01d8a",
+      "status": "adapted"
+    },
+    "deployment/g1/idp_g1/robot_interface.py": {
+      "source_path": "g1_dp/g1_dp/deploy/robot_interface.py",
+      "source_sha256": "b73950d0cb5336829f778c6c6e7091571762234aaa35f1f049b9bcb2c50624bb",
+      "release_sha256": "80ea5bd86f57431744838a8e6fc64ecd919789f4b76c92a1f8afef2da460e275",
+      "status": "adapted"
+    },
+    "deployment/g1/idp_g1/common.py": {
+      "source_path": "g1_dp/g1_dp/deploy/common.py",
+      "source_sha256": "749d7c5790fef522d7c570f3cc95eeaee3b404e3683bbd492ec03dd04de53316",
+      "release_sha256": "4e17a4d8faebd54e6ddc068d670779b34e255ccee6b41eeafededcb113347178",
+      "status": "adapted"
+    },
+    "backends/dp/diffusion_policy/policy/diffusion_unet_image_policy.py": {
+      "source_path": "RoboTwin/policy/DP/diffusion_policy/policy/diffusion_unet_image_policy.py",
+      "source_sha256": "e749b70f8e8d3c2bcf94a6bec6734c2f0a0b1d933224c289fc5e0ba9dba88e13",
+      "release_sha256": "6b4e2ee8e8e6fe235cfeae92305406cd93e5b34bfec997737c43c9502e80cf47",
+      "status": "adapted"
+    },
+    "backends/dp/diffusion_policy/model/vision/multi_image_obs_encoder.py": {
+      "source_path": "RoboTwin/policy/DP/diffusion_policy/model/vision/multi_image_obs_encoder.py",
+      "source_sha256": "0511c7d9cf9460aaa0a208ac04247db9c51a2f703f123a503dff7423cc25f693",
+      "release_sha256": "0511c7d9cf9460aaa0a208ac04247db9c51a2f703f123a503dff7423cc25f693",
+      "status": "unchanged"
+    },
+    "backends/dp/diffusion_policy/model/vision/model_getter.py": {
+      "source_path": "RoboTwin/policy/DP/diffusion_policy/model/vision/model_getter.py",
+      "source_sha256": "07615235ef9675c47549712eb7d3f6764d6f9dad30c543f86c5a82ca322b0638",
+      "release_sha256": "07615235ef9675c47549712eb7d3f6764d6f9dad30c543f86c5a82ca322b0638",
+      "status": "unchanged"
+    },
+    "deployment/g1/idp_g1/capture_pose.py": {
+      "source_path": "g1_dp/g1_dp/deploy/remote_pose.py",
+      "source_sha256": "42c062b8afb140916dd4535660f29b797829b7656a8562dfa6184f6cb5637106",
+      "adaptation": "read-only pose capture only",
+      "release_sha256": "b8977713092a364b49950d8d89d82649aac11d430b9f2e90f4b48a91ec6db139",
+      "status": "adapted"
+    },
+    "deployment/g1/idp_g1/run_policy.py": {
+      "source_path": "g1_dp/g1_dp/deploy/episode_loop.py",
+      "source_sha256": "4300de024287a22c32e1f522a871fdb9b1b54b94ebf284413cadc3ca948f4ab8",
+      "release_sha256": "5368c3fc4a3d2053d0444b406e59dd556046ae4183ae3570963d7aa0bf502a56",
+      "status": "adapted"
+    },
+    "deployment/g1/tests/test_infer_logic.py": {
+      "source_path": "g1_dp/tests/test_infer_logic.py",
+      "source_sha256": "e7d6c01faf3aba471031fbbe695298c9aa090a00d1c42cae77e201fb3d7d7146",
+      "release_sha256": "c35115e593039b491d7b219e2d04adaa937eb3824faf4bdaea2b4784019ec47d",
+      "status": "adapted"
+    },
+    "deployment/g1/configs/banana.json": {
+      "source_path": "g1_dp/g1_dp/deploy/episode_loop.py",
+      "source_sha256": "4300de024287a22c32e1f522a871fdb9b1b54b94ebf284413cadc3ca948f4ab8",
+      "adaptation": "Task initial pose extracted into metadata/configuration template; no demonstration episodes copied",
+      "release_sha256": "d93d19a51cb7f759d1d0d0b64f1fd2596f7878e1d486e1c9dbdbfdd2d7f26ee9",
+      "status": "adapted"
+    },
+    "deployment/g1/configs/soda.json": {
+      "source_path": "g1_dp/g1_dp/deploy/episode_loop.py",
+      "source_sha256": "4300de024287a22c32e1f522a871fdb9b1b54b94ebf284413cadc3ca948f4ab8",
+      "adaptation": "Task initial pose extracted into metadata/configuration template; no demonstration episodes copied",
+      "release_sha256": "d6c58346da01975c137b2a79e446c64f446e0b0330e3634ee44f87d942bc7598",
+      "status": "adapted"
+    }
+  },
+  "external_controllers": {
+    "robot_arm.py": {
+      "source_path": "unified-finetuning-manager/vendor/openpi_g1_control/robot_control/robot_arm.py",
+      "sha256": "b18226ef17d3c171249d0eefa647f38748a4be644512719a624103e618f23f04",
+      "bundled": false
+    },
+    "dex3_hand.py": {
+      "source_path": "unified-finetuning-manager/vendor/openpi_g1_control/robot_control/dex3_hand.py",
+      "sha256": "2cf2acd0ab4f1b2cf1ca5218a934a6134bed5a59ec5bad7730c6013129fdd7c1",
+      "bundled": false
+    }
+  }
+}

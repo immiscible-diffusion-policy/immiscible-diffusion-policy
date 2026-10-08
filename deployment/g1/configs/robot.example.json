@@ -1,0 +1,10 @@
+{
+  "dds_interface": "YOUR_ROBOT_NETWORK_INTERFACE",
+  "image_server_address": "ROBOT_IP",
+  "image_server_port": 5555,
+  "head_width": 640,
+  "motion_mode": true,
+  "enable_hands": true,
+  "gravity_compensation": true,
+  "waist_upright": true
+}

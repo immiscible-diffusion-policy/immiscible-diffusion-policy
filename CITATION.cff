@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite the paper below."
+title: "Immiscible Diffusion Policy: Preserving Multimodal Robot Actions through Label-Free Noise Assignment"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: Zhang
+    given-names: Xiao
+  - family-names: Chen
+    given-names: Yuxin
+  - family-names: Liang
+    given-names: Zhixuan
+  - family-names: Zhan
+    given-names: Guojian
+  - family-names: Li
+    given-names: Chenran
+  - family-names: Xu
+    given-names: Chenfeng
+  - family-names: Tomizuka
+    given-names: Masayoshi
+  - family-names: Li
+    given-names: Yiheng
+preferred-citation:
+  type: article
+  title: "Immiscible Diffusion Policy: Preserving Multimodal Robot Actions through Label-Free Noise Assignment"
+  authors:
+    - family-names: Zhang
+      given-names: Xiao
+    - family-names: Chen
+      given-names: Yuxin
+    - family-names: Liang
+      given-names: Zhixuan
+    - family-names: Zhan
+      given-names: Guojian
+    - family-names: Li
+      given-names: Chenran
+    - family-names: Xu
+      given-names: Chenfeng
+    - family-names: Tomizuka
+      given-names: Masayoshi
+    - family-names: Li
+      given-names: Yiheng
+  journal: arXiv
+  year: 2026
+  url: "https://arxiv.org/abs/2610.09369"

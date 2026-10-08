@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "idp-g1-deployment"
+version = "0.1.0"
+description = "Optional G1 image-DP deployment for Immiscible Diffusion Policy"
+requires-python = ">=3.9,<3.11"
+dependencies = ["numpy<2", "opencv-python>=4.5,<5", "pyzmq>=23", "dill>=0.3.5", "hydra-core>=1.2,<1.4", "omegaconf>=2.2,<2.4"]
+license = {file = "LICENSE"}
+
+[tool.setuptools]
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+
+[tool.setuptools.packages.find]
+include = ["idp_g1*"]

@@ -1,0 +1,301 @@
+{
+  "repository": "https://github.com/real-stanford/diffusion_policy",
+  "commit": "5ba07ac6661db573af695b419a7947ecb704690f",
+  "files": {
+    "LICENSE": {
+      "source_path": "LICENSE",
+      "upstream_sha256": "304e99a48271e10820f71a1b86ef395c06c100d7f68dd1d308790d1064fc4d41",
+      "release_sha256": "304e99a48271e10820f71a1b86ef395c06c100d7f68dd1d308790d1064fc4d41",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/checkpoint_util.py": {
+      "source_path": "diffusion_policy/common/checkpoint_util.py",
+      "upstream_sha256": "2640d4ceda252ee926b13b9ce6c828e5df2e36a9d36637a6a80a7bbe11dab543",
+      "release_sha256": "2640d4ceda252ee926b13b9ce6c828e5df2e36a9d36637a6a80a7bbe11dab543",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/json_logger.py": {
+      "source_path": "diffusion_policy/common/json_logger.py",
+      "upstream_sha256": "0678a15375ec22d85bf2deb499c1c3369aae885f35e214a884bf6bac7655d9ff",
+      "release_sha256": "0678a15375ec22d85bf2deb499c1c3369aae885f35e214a884bf6bac7655d9ff",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/normalize_util.py": {
+      "source_path": "diffusion_policy/common/normalize_util.py",
+      "upstream_sha256": "d5f3e9da250a22909d0b52debc33bb1468713ca46f85b044e8a0e8e9112d4e5e",
+      "release_sha256": "d5f3e9da250a22909d0b52debc33bb1468713ca46f85b044e8a0e8e9112d4e5e",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/pytorch_util.py": {
+      "source_path": "diffusion_policy/common/pytorch_util.py",
+      "upstream_sha256": "96ce50e191b4c837532529040af65d2b9a1f433f33a5187f8cf256b62d84b6b4",
+      "release_sha256": "96ce50e191b4c837532529040af65d2b9a1f433f33a5187f8cf256b62d84b6b4",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/replay_buffer.py": {
+      "source_path": "diffusion_policy/common/replay_buffer.py",
+      "upstream_sha256": "c8d59f208525ed5c2164b67f85faf8642251d408533eec1639282076a79d80b4",
+      "release_sha256": "c8d59f208525ed5c2164b67f85faf8642251d408533eec1639282076a79d80b4",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/robomimic_config_util.py": {
+      "source_path": "diffusion_policy/common/robomimic_config_util.py",
+      "upstream_sha256": "e782f9ba46ea433a77dfe95525a879bcf3033969f07ba9f776268c247e8a8a30",
+      "release_sha256": "e782f9ba46ea433a77dfe95525a879bcf3033969f07ba9f776268c247e8a8a30",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/sampler.py": {
+      "source_path": "diffusion_policy/common/sampler.py",
+      "upstream_sha256": "3dc7afb686a418abf4ceee4648dafb7e1be901bb70b1539530f9f9964cad1688",
+      "release_sha256": "3dc7afb686a418abf4ceee4648dafb7e1be901bb70b1539530f9f9964cad1688",
+      "status": "unchanged"
+    },
+    "diffusion_policy/common/timestamp_accumulator.py": {
+      "source_path": "diffusion_policy/common/timestamp_accumulator.py",
+      "upstream_sha256": "16f32c9e626debca2c495e859152e6fee4166732c5cb8b8923f4399854fcb6e9",
+      "release_sha256": "16f32c9e626debca2c495e859152e6fee4166732c5cb8b8923f4399854fcb6e9",
+      "status": "unchanged"
+    },
+    "diffusion_policy/config/task/pusht_image.yaml": {
+      "source_path": "diffusion_policy/config/task/pusht_image.yaml",
+      "upstream_sha256": "05feecc45a4acd0912ba1ffbb4027b702448f30a3e86e0c89b7d8fc0ba0783d9",
+      "release_sha256": "05feecc45a4acd0912ba1ffbb4027b702448f30a3e86e0c89b7d8fc0ba0783d9",
+      "status": "unchanged"
+    },
+    "diffusion_policy/config/task/pusht_lowdim.yaml": {
+      "source_path": "diffusion_policy/config/task/pusht_lowdim.yaml",
+      "upstream_sha256": "f623b6225002d9d754ec452a8e57c07ae633cf757b388d60fc98773d213eb384",
+      "release_sha256": "f623b6225002d9d754ec452a8e57c07ae633cf757b388d60fc98773d213eb384",
+      "status": "unchanged"
+    },
+    "diffusion_policy/config/train_diffusion_unet_hybrid_workspace.yaml": {
+      "source_path": "diffusion_policy/config/train_diffusion_unet_hybrid_workspace.yaml",
+      "upstream_sha256": "32a0c18a7f8cbecea656b9e62f37d9e16eacbc884898e43ba95195b5fa02a5c4",
+      "release_sha256": "8dd95db6cd33d90b9fb2756887616829da1ec7f7cada0b2a1e0fbdae308c697b",
+      "status": "adapted"
+    },
+    "diffusion_policy/config/train_diffusion_unet_lowdim_workspace.yaml": {
+      "source_path": "diffusion_policy/config/train_diffusion_unet_lowdim_workspace.yaml",
+      "upstream_sha256": "29d0ef5f2f79641fc1e2ce5e337339b06a2fb3bb4b885b061381b2d65f9c7cd3",
+      "release_sha256": "a1bc7d2b5ac160c04712873b13f053f14b8aa2561af887178f7f7de1f2705964",
+      "status": "adapted"
+    },
+    "diffusion_policy/dataset/base_dataset.py": {
+      "source_path": "diffusion_policy/dataset/base_dataset.py",
+      "upstream_sha256": "d2ad33b5af14a3a3ad9995701dd44790170c84b394a7bad899d607d809cbe8e3",
+      "release_sha256": "d2ad33b5af14a3a3ad9995701dd44790170c84b394a7bad899d607d809cbe8e3",
+      "status": "unchanged"
+    },
+    "diffusion_policy/dataset/pusht_dataset.py": {
+      "source_path": "diffusion_policy/dataset/pusht_dataset.py",
+      "upstream_sha256": "966adacc891377722c9efc261b50aab02325423ec934898192a90904416d7914",
+      "release_sha256": "966adacc891377722c9efc261b50aab02325423ec934898192a90904416d7914",
+      "status": "unchanged"
+    },
+    "diffusion_policy/dataset/pusht_image_dataset.py": {
+      "source_path": "diffusion_policy/dataset/pusht_image_dataset.py",
+      "upstream_sha256": "1c3cc71f10cdf71d0bfbea411068a62ef876ee7508dfd7c1d1cfbe770650b0f5",
+      "release_sha256": "319642858c8aa0e0b4113af1a641cdb6a40534e494fc9fe35b320064579028de",
+      "status": "adapted"
+    },
+    "diffusion_policy/env/pusht/pusht_env.py": {
+      "source_path": "diffusion_policy/env/pusht/pusht_env.py",
+      "upstream_sha256": "759107dc0ea6017b8afe3380ce23817713edf26af725fc4f03c0416ced940bd0",
+      "release_sha256": "759107dc0ea6017b8afe3380ce23817713edf26af725fc4f03c0416ced940bd0",
+      "status": "unchanged"
+    },
+    "diffusion_policy/env/pusht/pusht_image_env.py": {
+      "source_path": "diffusion_policy/env/pusht/pusht_image_env.py",
+      "upstream_sha256": "b0a15ddbdfedfea1ffbd6119fd1266fc2b238ef08b1758dc3e1db0f7054353cc",
+      "release_sha256": "b0a15ddbdfedfea1ffbd6119fd1266fc2b238ef08b1758dc3e1db0f7054353cc",
+      "status": "unchanged"
+    },
+    "diffusion_policy/env/pusht/pusht_keypoints_env.py": {
+      "source_path": "diffusion_policy/env/pusht/pusht_keypoints_env.py",
+      "upstream_sha256": "7103face7a744bd85815eaf7d7a6d292c0910ef933d3f730e4c34aea95b529af",
+      "release_sha256": "7103face7a744bd85815eaf7d7a6d292c0910ef933d3f730e4c34aea95b529af",
+      "status": "unchanged"
+    },
+    "diffusion_policy/env/pusht/pymunk_keypoint_manager.py": {
+      "source_path": "diffusion_policy/env/pusht/pymunk_keypoint_manager.py",
+      "upstream_sha256": "26cb951d046992906ca55d7a89a44022d930be5ec4ea8fd56db889f9d6e12275",
+      "release_sha256": "26527aeb0663c61415c803b17cd23b5a1903306d4f50c7f4e3825d04cb59aa07",
+      "status": "adapted"
+    },
+    "diffusion_policy/env/pusht/pymunk_override.py": {
+      "source_path": "diffusion_policy/env/pusht/pymunk_override.py",
+      "upstream_sha256": "85e7c54b5e9630a9f7e675250ee514ae9b2249d11654ec0811d8e4bcf413fe39",
+      "release_sha256": "85e7c54b5e9630a9f7e675250ee514ae9b2249d11654ec0811d8e4bcf413fe39",
+      "status": "unchanged"
+    },
+    "diffusion_policy/env_runner/base_image_runner.py": {
+      "source_path": "diffusion_policy/env_runner/base_image_runner.py",
+      "upstream_sha256": "bde19b7567aaa93de47093608c1a536ec14f787cfb44939eac9f33c1d50b989e",
+      "release_sha256": "bde19b7567aaa93de47093608c1a536ec14f787cfb44939eac9f33c1d50b989e",
+      "status": "unchanged"
+    },
+    "diffusion_policy/env_runner/base_lowdim_runner.py": {
+      "source_path": "diffusion_policy/env_runner/base_lowdim_runner.py",
+      "upstream_sha256": "f24ea57e14c7084f027ced8e0fa7d835fcf56db2ea05738f61d3efb30d0e73a8",
+      "release_sha256": "f24ea57e14c7084f027ced8e0fa7d835fcf56db2ea05738f61d3efb30d0e73a8",
+      "status": "unchanged"
+    },
+    "diffusion_policy/env_runner/pusht_image_runner.py": {
+      "source_path": "diffusion_policy/env_runner/pusht_image_runner.py",
+      "upstream_sha256": "84faa24e803635fe1f07b1907ef04fcb74d07c6ecfce5f2ff598601019232f03",
+      "release_sha256": "84faa24e803635fe1f07b1907ef04fcb74d07c6ecfce5f2ff598601019232f03",
+      "status": "unchanged"
+    },
+    "diffusion_policy/env_runner/pusht_keypoints_runner.py": {
+      "source_path": "diffusion_policy/env_runner/pusht_keypoints_runner.py",
+      "upstream_sha256": "5abec23f1edd40067fcd7c0d010fcdbc52cc31cb8a303fa222579f2bdf761503",
+      "release_sha256": "5abec23f1edd40067fcd7c0d010fcdbc52cc31cb8a303fa222579f2bdf761503",
+      "status": "unchanged"
+    },
+    "diffusion_policy/gym_util/async_vector_env.py": {
+      "source_path": "diffusion_policy/gym_util/async_vector_env.py",
+      "upstream_sha256": "b9ba8353fe6a187a4c254184e08a22a461b3086a2da60035d2c07422184853c6",
+      "release_sha256": "b9ba8353fe6a187a4c254184e08a22a461b3086a2da60035d2c07422184853c6",
+      "status": "unchanged"
+    },
+    "diffusion_policy/gym_util/multistep_wrapper.py": {
+      "source_path": "diffusion_policy/gym_util/multistep_wrapper.py",
+      "upstream_sha256": "2923e73c13ff9f782451ab61bed43a802670bbf29419471f82878c690f26a342",
+      "release_sha256": "2923e73c13ff9f782451ab61bed43a802670bbf29419471f82878c690f26a342",
+      "status": "unchanged"
+    },
+    "diffusion_policy/gym_util/video_recording_wrapper.py": {
+      "source_path": "diffusion_policy/gym_util/video_recording_wrapper.py",
+      "upstream_sha256": "415cbf6055c897eac1db89e9a0a2c9c2c5885bcc4b291543094e389adc029cb1",
+      "release_sha256": "415cbf6055c897eac1db89e9a0a2c9c2c5885bcc4b291543094e389adc029cb1",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/common/dict_of_tensor_mixin.py": {
+      "source_path": "diffusion_policy/model/common/dict_of_tensor_mixin.py",
+      "upstream_sha256": "158b63a244bcfb9aa377206730f5f59778c6aeb9138ff55c76d2c28ec46952d1",
+      "release_sha256": "158b63a244bcfb9aa377206730f5f59778c6aeb9138ff55c76d2c28ec46952d1",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/common/lr_scheduler.py": {
+      "source_path": "diffusion_policy/model/common/lr_scheduler.py",
+      "upstream_sha256": "feb9453856bfd1ee10b1faba6c64814e071c5e70174398daf3bfcd8d430c80db",
+      "release_sha256": "feb9453856bfd1ee10b1faba6c64814e071c5e70174398daf3bfcd8d430c80db",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/common/module_attr_mixin.py": {
+      "source_path": "diffusion_policy/model/common/module_attr_mixin.py",
+      "upstream_sha256": "658dececa20f7628960fc1a8db89e4be3693e1bba47f63d1ff8a4faa2d481e45",
+      "release_sha256": "658dececa20f7628960fc1a8db89e4be3693e1bba47f63d1ff8a4faa2d481e45",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/common/normalizer.py": {
+      "source_path": "diffusion_policy/model/common/normalizer.py",
+      "upstream_sha256": "92322852fc04d956d0dd43a2e41fb461dee246bbf97ddc7940186a9307525ed3",
+      "release_sha256": "92322852fc04d956d0dd43a2e41fb461dee246bbf97ddc7940186a9307525ed3",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/common/tensor_util.py": {
+      "source_path": "diffusion_policy/model/common/tensor_util.py",
+      "upstream_sha256": "751b042aa5390ddf1f5b6220a465dfa20dbb9304e3c057f04512d6ee55f4e1b1",
+      "release_sha256": "751b042aa5390ddf1f5b6220a465dfa20dbb9304e3c057f04512d6ee55f4e1b1",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/diffusion/conditional_unet1d.py": {
+      "source_path": "diffusion_policy/model/diffusion/conditional_unet1d.py",
+      "upstream_sha256": "8a95014f8aa52ade086f967c9018a66bf0c68f2133969c8f7a8522da01b472ac",
+      "release_sha256": "8a95014f8aa52ade086f967c9018a66bf0c68f2133969c8f7a8522da01b472ac",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/diffusion/conv1d_components.py": {
+      "source_path": "diffusion_policy/model/diffusion/conv1d_components.py",
+      "upstream_sha256": "ea2aa10e297cf253bc1a1919ba47fe6ae32049b5eaaab292ed9cc145d8d2adc0",
+      "release_sha256": "ea2aa10e297cf253bc1a1919ba47fe6ae32049b5eaaab292ed9cc145d8d2adc0",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/diffusion/ema_model.py": {
+      "source_path": "diffusion_policy/model/diffusion/ema_model.py",
+      "upstream_sha256": "f683be124722abe0703e2cf003566ab2d446783383cdcd5202063e20148ae467",
+      "release_sha256": "f683be124722abe0703e2cf003566ab2d446783383cdcd5202063e20148ae467",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/diffusion/mask_generator.py": {
+      "source_path": "diffusion_policy/model/diffusion/mask_generator.py",
+      "upstream_sha256": "23dba4c112ed57e41d530612c79d9841c9b3c5bd3d6790863d1739190a9ab7b0",
+      "release_sha256": "23dba4c112ed57e41d530612c79d9841c9b3c5bd3d6790863d1739190a9ab7b0",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/diffusion/positional_embedding.py": {
+      "source_path": "diffusion_policy/model/diffusion/positional_embedding.py",
+      "upstream_sha256": "2266c75ecc9c9ac8ca126839d39a7bafbdd7af8800d6de903f66815e64cc366c",
+      "release_sha256": "2266c75ecc9c9ac8ca126839d39a7bafbdd7af8800d6de903f66815e64cc366c",
+      "status": "unchanged"
+    },
+    "diffusion_policy/model/vision/crop_randomizer.py": {
+      "source_path": "diffusion_policy/model/vision/crop_randomizer.py",
+      "upstream_sha256": "85787b6becd337352c2a1795f1e77be977c073134f91c3d0924b9d0e36c92978",
+      "release_sha256": "85787b6becd337352c2a1795f1e77be977c073134f91c3d0924b9d0e36c92978",
+      "status": "unchanged"
+    },
+    "diffusion_policy/policy/base_image_policy.py": {
+      "source_path": "diffusion_policy/policy/base_image_policy.py",
+      "upstream_sha256": "32fd3fe35e2827f4472e195381e642dd8d78f4f0038f4f9625e0128c76e1aecd",
+      "release_sha256": "32fd3fe35e2827f4472e195381e642dd8d78f4f0038f4f9625e0128c76e1aecd",
+      "status": "unchanged"
+    },
+    "diffusion_policy/policy/base_lowdim_policy.py": {
+      "source_path": "diffusion_policy/policy/base_lowdim_policy.py",
+      "upstream_sha256": "80779d2492f629be926f0788e763fb3d33beba024ed94c4327bc8eae5f4100bb",
+      "release_sha256": "80779d2492f629be926f0788e763fb3d33beba024ed94c4327bc8eae5f4100bb",
+      "status": "unchanged"
+    },
+    "diffusion_policy/policy/diffusion_unet_hybrid_image_policy.py": {
+      "source_path": "diffusion_policy/policy/diffusion_unet_hybrid_image_policy.py",
+      "upstream_sha256": "d8ead767ed3b1501c358aa3dd97ab479ebdf77a62ec9ab7081d6a2211c2d2e76",
+      "release_sha256": "98418e7a50299e397e8845ca528fdce75569aeed24c1648d73e7ade01c14c6da",
+      "status": "adapted"
+    },
+    "diffusion_policy/policy/diffusion_unet_lowdim_policy.py": {
+      "source_path": "diffusion_policy/policy/diffusion_unet_lowdim_policy.py",
+      "upstream_sha256": "bd13e7fe78fc8757281afec757117b0b15c518b5b3896d5d780958b8e31217ea",
+      "release_sha256": "61a08d98075395ecd3167ee2e9ff7215a2205961ebb31629e320388eb83de41a",
+      "status": "adapted"
+    },
+    "diffusion_policy/real_world/video_recorder.py": {
+      "source_path": "diffusion_policy/real_world/video_recorder.py",
+      "upstream_sha256": "26ca27d8ac42b7c17247cbf33edad6b68b642b7f95f89252e65aefd0ef79dcb7",
+      "release_sha256": "26ca27d8ac42b7c17247cbf33edad6b68b642b7f95f89252e65aefd0ef79dcb7",
+      "status": "unchanged"
+    },
+    "diffusion_policy/workspace/base_workspace.py": {
+      "source_path": "diffusion_policy/workspace/base_workspace.py",
+      "upstream_sha256": "388b531260f2e0f91fc6bd2bdc90abd99367e9b7f7744f0010112ecc78d6c1e0",
+      "release_sha256": "4a19a921213cc63286cecdbbef8dcf48b613e6544e00f45cb8c0f20aad6d2279",
+      "status": "adapted"
+    },
+    "diffusion_policy/workspace/train_diffusion_unet_hybrid_workspace.py": {
+      "source_path": "diffusion_policy/workspace/train_diffusion_unet_hybrid_workspace.py",
+      "upstream_sha256": "1d69542bdb37906c899f25465e0c178b0581cbf4760de326a78899d67b0cd029",
+      "release_sha256": "617f489df5104377b14111c4c339ad87ef145b64b645bfb5f81a42842c41f7cb",
+      "status": "adapted"
+    },
+    "diffusion_policy/workspace/train_diffusion_unet_lowdim_workspace.py": {
+      "source_path": "diffusion_policy/workspace/train_diffusion_unet_lowdim_workspace.py",
+      "upstream_sha256": "aca3bbbd1759148f67f648285c241a488e2ab1469dd5eb6a158fc445c72b6e1c",
+      "release_sha256": "768bf8d7ddb02ce7f8fd4199d402637251ed173f2fbe079839ef7997950102b8",
+      "status": "adapted"
+    },
+    "eval.py": {
+      "source_path": "eval.py",
+      "upstream_sha256": "e62694214cce4265ad783d1352713e25e963fb6684365ff1f0f4db08e57ade12",
+      "release_sha256": "280173bb1c154c21a7cc29a179fc82d6349f9efcc6f21cfde95ac966a37c9e09",
+      "status": "adapted"
+    },
+    "train.py": {
+      "source_path": "train.py",
+      "upstream_sha256": "4dc8d6e876db25a62bf6c647444d7ee88f6754cda992c75728419d47f26374e5",
+      "release_sha256": "4dc8d6e876db25a62bf6c647444d7ee88f6754cda992c75728419d47f26374e5",
+      "status": "unchanged"
+    }
+  },
+  "release_note": "Independent source copies with integrated assignment; see README.md for adaptations. No source Git history or data was copied."
+}

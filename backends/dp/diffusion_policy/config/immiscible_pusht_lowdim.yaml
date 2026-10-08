@@ -1,0 +1,7 @@
+defaults:
+  - train_diffusion_unet_lowdim_workspace
+  - _self_
+
+policy:
+  use_immiscible_diffusion: true
+  immiscible_start_epoch: 50

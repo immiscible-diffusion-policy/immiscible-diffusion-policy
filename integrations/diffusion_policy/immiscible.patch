@@ -1,0 +1,164 @@
+diff --git a/diffusion_policy/policy/diffusion_unet_lowdim_policy.py b/diffusion_policy/policy/diffusion_unet_lowdim_policy.py
+--- a/diffusion_policy/policy/diffusion_unet_lowdim_policy.py
++++ b/diffusion_policy/policy/diffusion_unet_lowdim_policy.py
+@@ -1,5 +1,6 @@
+ from typing import Dict
+ import torch
++from immiscible_diffusion_policy import match_noise
+ import torch.nn as nn
+ import torch.nn.functional as F
+ from einops import rearrange, reduce
+@@ -24,6 +25,8 @@
+             obs_as_global_cond=False,
+             pred_action_steps_only=False,
+             oa_step_convention=False,
++            use_immiscible_diffusion=False,
++            immiscible_start_epoch=50,
+             # parameters passed to step
+             **kwargs):
+         super().__init__()
+@@ -50,6 +53,10 @@
+         self.pred_action_steps_only = pred_action_steps_only
+         self.oa_step_convention = oa_step_convention
+         self.kwargs = kwargs
++        self.use_immiscible_diffusion = use_immiscible_diffusion
++        if immiscible_start_epoch < 0:
++            raise ValueError("immiscible_start_epoch must be nonnegative")
++        self.immiscible_start_epoch = immiscible_start_epoch
+ 
+         if num_inference_steps is None:
+             num_inference_steps = noise_scheduler.config.num_train_timesteps
+@@ -180,7 +187,7 @@
+     def set_normalizer(self, normalizer: LinearNormalizer):
+         self.normalizer.load_state_dict(normalizer.state_dict())
+ 
+-    def compute_loss(self, batch):
++    def compute_loss(self, batch, *, epoch=0):
+         # normalize input
+         assert 'valid_mask' not in batch
+         nbatch = self.normalizer.normalize(batch)
+@@ -216,6 +223,9 @@
+ 
+         # Sample noise that we'll add to the images
+         noise = torch.randn(trajectory.shape, device=trajectory.device)
++        if self.use_immiscible_diffusion and epoch >= self.immiscible_start_epoch:
++            # Match the action channels of the trajectory actually being denoised.
++            noise = match_noise(trajectory[..., :self.action_dim], noise)
+         bsz = trajectory.shape[0]
+         # Sample a random timestep for each image
+         timesteps = torch.randint(
+diff --git a/diffusion_policy/policy/diffusion_unet_hybrid_image_policy.py b/diffusion_policy/policy/diffusion_unet_hybrid_image_policy.py
+--- a/diffusion_policy/policy/diffusion_unet_hybrid_image_policy.py
++++ b/diffusion_policy/policy/diffusion_unet_hybrid_image_policy.py
+@@ -1,6 +1,7 @@
+ from typing import Dict
+ import math
+ import torch
++from immiscible_diffusion_policy import match_noise
+ import torch.nn as nn
+ import torch.nn.functional as F
+ from einops import rearrange, reduce
+@@ -36,6 +37,8 @@
+             cond_predict_scale=True,
+             obs_encoder_group_norm=False,
+             eval_fixed_crop=False,
++            use_immiscible_diffusion=False,
++            immiscible_start_epoch=50,
+             # parameters passed to step
+             **kwargs):
+         super().__init__()
+@@ -163,6 +166,10 @@
+         self.n_obs_steps = n_obs_steps
+         self.obs_as_global_cond = obs_as_global_cond
+         self.kwargs = kwargs
++        self.use_immiscible_diffusion = use_immiscible_diffusion
++        if immiscible_start_epoch < 0:
++            raise ValueError("immiscible_start_epoch must be nonnegative")
++        self.immiscible_start_epoch = immiscible_start_epoch
+ 
+         if num_inference_steps is None:
+             num_inference_steps = noise_scheduler.config.num_train_timesteps
+@@ -281,7 +288,7 @@
+     def set_normalizer(self, normalizer: LinearNormalizer):
+         self.normalizer.load_state_dict(normalizer.state_dict())
+ 
+-    def compute_loss(self, batch):
++    def compute_loss(self, batch, *, epoch=0):
+         # normalize input
+         assert 'valid_mask' not in batch
+         nobs = self.normalizer.normalize(batch['obs'])
+@@ -315,6 +322,8 @@
+ 
+         # Sample noise that we'll add to the images
+         noise = torch.randn(trajectory.shape, device=trajectory.device)
++        if self.use_immiscible_diffusion and epoch >= self.immiscible_start_epoch:
++            noise = match_noise(nactions, noise)
+         bsz = trajectory.shape[0]
+         # Sample a random timestep for each image
+         timesteps = torch.randint(
+diff --git a/diffusion_policy/workspace/train_diffusion_unet_lowdim_workspace.py b/diffusion_policy/workspace/train_diffusion_unet_lowdim_workspace.py
+--- a/diffusion_policy/workspace/train_diffusion_unet_lowdim_workspace.py
++++ b/diffusion_policy/workspace/train_diffusion_unet_lowdim_workspace.py
+@@ -165,7 +165,7 @@
+                             train_sampling_batch = batch
+ 
+                         # compute loss
+-                        raw_loss = self.model.compute_loss(batch)
++                        raw_loss = self.model.compute_loss(batch, epoch=self.epoch)
+                         loss = raw_loss / cfg.training.gradient_accumulate_every
+                         loss.backward()
+ 
+@@ -226,7 +226,7 @@
+                                 leave=False, mininterval=cfg.training.tqdm_interval_sec) as tepoch:
+                             for batch_idx, batch in enumerate(tepoch):
+                                 batch = dict_apply(batch, lambda x: x.to(device, non_blocking=True))
+-                                loss = self.model.compute_loss(batch)
++                                loss = self.model.compute_loss(batch, epoch=self.epoch)
+                                 val_losses.append(loss)
+                                 if (cfg.training.max_val_steps is not None) \
+                                     and batch_idx >= (cfg.training.max_val_steps-1):
+diff --git a/diffusion_policy/workspace/train_diffusion_unet_hybrid_workspace.py b/diffusion_policy/workspace/train_diffusion_unet_hybrid_workspace.py
+--- a/diffusion_policy/workspace/train_diffusion_unet_hybrid_workspace.py
++++ b/diffusion_policy/workspace/train_diffusion_unet_hybrid_workspace.py
+@@ -163,7 +163,7 @@
+                             train_sampling_batch = batch
+ 
+                         # compute loss
+-                        raw_loss = self.model.compute_loss(batch)
++                        raw_loss = self.model.compute_loss(batch, epoch=self.epoch)
+                         loss = raw_loss / cfg.training.gradient_accumulate_every
+                         loss.backward()
+ 
+@@ -224,7 +224,7 @@
+                                 leave=False, mininterval=cfg.training.tqdm_interval_sec) as tepoch:
+                             for batch_idx, batch in enumerate(tepoch):
+                                 batch = dict_apply(batch, lambda x: x.to(device, non_blocking=True))
+-                                loss = self.model.compute_loss(batch)
++                                loss = self.model.compute_loss(batch, epoch=self.epoch)
+                                 val_losses.append(loss)
+                                 if (cfg.training.max_val_steps is not None) \
+                                     and batch_idx >= (cfg.training.max_val_steps-1):
+diff --git a/diffusion_policy/config/train_diffusion_unet_lowdim_workspace.yaml b/diffusion_policy/config/train_diffusion_unet_lowdim_workspace.yaml
+--- a/diffusion_policy/config/train_diffusion_unet_lowdim_workspace.yaml
++++ b/diffusion_policy/config/train_diffusion_unet_lowdim_workspace.yaml
+@@ -23,6 +23,8 @@
+ 
+ policy:
+   _target_: diffusion_policy.policy.diffusion_unet_lowdim_policy.DiffusionUnetLowdimPolicy
++  use_immiscible_diffusion: false
++  immiscible_start_epoch: 50
+ 
+   model:
+     _target_: diffusion_policy.model.diffusion.conditional_unet1d.ConditionalUnet1D
+diff --git a/diffusion_policy/config/train_diffusion_unet_hybrid_workspace.yaml b/diffusion_policy/config/train_diffusion_unet_hybrid_workspace.yaml
+--- a/diffusion_policy/config/train_diffusion_unet_hybrid_workspace.yaml
++++ b/diffusion_policy/config/train_diffusion_unet_hybrid_workspace.yaml
+@@ -20,6 +20,8 @@
+ 
+ policy:
+   _target_: diffusion_policy.policy.diffusion_unet_hybrid_image_policy.DiffusionUnetHybridImagePolicy
++  use_immiscible_diffusion: false
++  immiscible_start_epoch: 50
+ 
+   shape_meta: ${shape_meta}
+   

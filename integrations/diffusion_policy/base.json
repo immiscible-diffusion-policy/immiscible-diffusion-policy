@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/real-stanford/diffusion_policy",
+  "commit": "5ba07ac6661db573af695b419a7947ecb704690f",
+  "files": {
+    "diffusion_policy/policy/diffusion_unet_lowdim_policy.py": {
+      "base_sha256": "bd13e7fe78fc8757281afec757117b0b15c518b5b3896d5d780958b8e31217ea"
+    },
+    "diffusion_policy/policy/diffusion_unet_hybrid_image_policy.py": {
+      "base_sha256": "d8ead767ed3b1501c358aa3dd97ab479ebdf77a62ec9ab7081d6a2211c2d2e76"
+    },
+    "diffusion_policy/workspace/train_diffusion_unet_lowdim_workspace.py": {
+      "base_sha256": "aca3bbbd1759148f67f648285c241a488e2ab1469dd5eb6a158fc445c72b6e1c"
+    },
+    "diffusion_policy/workspace/train_diffusion_unet_hybrid_workspace.py": {
+      "base_sha256": "1d69542bdb37906c899f25465e0c178b0581cbf4760de326a78899d67b0cd029"
+    },
+    "diffusion_policy/config/train_diffusion_unet_lowdim_workspace.yaml": {
+      "base_sha256": "29d0ef5f2f79641fc1e2ce5e337339b06a2fb3bb4b885b061381b2d65f9c7cd3"
+    },
+    "diffusion_policy/config/train_diffusion_unet_hybrid_workspace.yaml": {
+      "base_sha256": "32a0c18a7f8cbecea656b9e62f37d9e16eacbc884898e43ba95195b5fa02a5c4"
+    }
+  }
+}

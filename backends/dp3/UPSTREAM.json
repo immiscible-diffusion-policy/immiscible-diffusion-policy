@@ -1,0 +1,157 @@
+{
+  "repository": "https://github.com/RoboTwin-Platform/RoboTwin",
+  "commit": "958a6d2910a0262f5531fcdeb7fffae4184bb586",
+  "files": {
+    "diffusion_policy_3d/common/checkpoint_util.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/common/checkpoint_util.py",
+      "upstream_sha256": "41bc1e81aa2f988eb0aaf134baea592e5c7fa9486330b2db85307de91cf48a77",
+      "release_sha256": "41bc1e81aa2f988eb0aaf134baea592e5c7fa9486330b2db85307de91cf48a77",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/common/logger_util.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/common/logger_util.py",
+      "upstream_sha256": "cfca32675b1ffd3bc773a1c8ac20f7ae821c53cfe22fb71c1228d3f5966b9cb6",
+      "release_sha256": "cfca32675b1ffd3bc773a1c8ac20f7ae821c53cfe22fb71c1228d3f5966b9cb6",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/common/model_util.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/common/model_util.py",
+      "upstream_sha256": "aca984520ac502fd046adef738914c48d649921a0c7faaa9ed10a03440e80a43",
+      "release_sha256": "aca984520ac502fd046adef738914c48d649921a0c7faaa9ed10a03440e80a43",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/common/pytorch_util.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/common/pytorch_util.py",
+      "upstream_sha256": "1cdbad37576a885cf274ca26a8402f184a18695b823dc4bc01e03745f1920e2b",
+      "release_sha256": "1cdbad37576a885cf274ca26a8402f184a18695b823dc4bc01e03745f1920e2b",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/common/replay_buffer.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/common/replay_buffer.py",
+      "upstream_sha256": "aa6cd7bd5042d8316db49a33f307955f5c82d735d73300428a4c17454264b916",
+      "release_sha256": "aa6cd7bd5042d8316db49a33f307955f5c82d735d73300428a4c17454264b916",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/common/sampler.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/common/sampler.py",
+      "upstream_sha256": "ccc65d2e572968f0438cfb8c81128cfcd2fcc0750764ce5ce9ff86848df5f680",
+      "release_sha256": "ccc65d2e572968f0438cfb8c81128cfcd2fcc0750764ce5ce9ff86848df5f680",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/config/robot_dp3.yaml": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/config/robot_dp3.yaml",
+      "upstream_sha256": "87a56e036b9968342fd7044f9a0ce6f9e989a20a31ce0dc9bc7ff968f318ef1f",
+      "release_sha256": "c1e7496bb020984de8776fd0046500fb69dff385e882ef5bac2184d46a420357",
+      "status": "adapted"
+    },
+    "diffusion_policy_3d/config/task/demo_task.yaml": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/config/task/demo_task.yaml",
+      "upstream_sha256": "814c53df36f80d39f4361de62dba3525b6cf4d78a74f371bbf430df00547db5c",
+      "release_sha256": "dc508bbc9e279f3baa300fed8157735106104e5689acdff72a87087b99eb630c",
+      "status": "adapted"
+    },
+    "diffusion_policy_3d/dataset/base_dataset.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/dataset/base_dataset.py",
+      "upstream_sha256": "2a2cf48c5e8baa535c2950958c6c9b501ee74d50f8a00a1caf44a51844ef14e2",
+      "release_sha256": "2a2cf48c5e8baa535c2950958c6c9b501ee74d50f8a00a1caf44a51844ef14e2",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/dataset/robot_dataset.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/dataset/robot_dataset.py",
+      "upstream_sha256": "f2f04b11fb4404c8529a2c1e0786c3fde3ac3500a137eaeb4d96e88c9a622fba",
+      "release_sha256": "31b809ccdc11d2dcce1f0cd6035ca24b313b047e39ce557d7acd993cb5407f78",
+      "status": "adapted"
+    },
+    "diffusion_policy_3d/env_runner/base_runner.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/env_runner/base_runner.py",
+      "upstream_sha256": "bb6db5289c69f79f73bd8f19e6db6587c5d4a236e143a12e00d82ef430b32e5b",
+      "release_sha256": "bb6db5289c69f79f73bd8f19e6db6587c5d4a236e143a12e00d82ef430b32e5b",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/env_runner/robot_runner.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/env_runner/robot_runner.py",
+      "upstream_sha256": "c47a6e1a7166caceb36a426f2d88241082bb03c38ddd3786b10d32ed3b079d4a",
+      "release_sha256": "c47a6e1a7166caceb36a426f2d88241082bb03c38ddd3786b10d32ed3b079d4a",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/common/dict_of_tensor_mixin.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/common/dict_of_tensor_mixin.py",
+      "upstream_sha256": "ff3be833276dda9d395f6204aec6769f30317a68c8634ab37d7f375e274be1f0",
+      "release_sha256": "ff3be833276dda9d395f6204aec6769f30317a68c8634ab37d7f375e274be1f0",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/common/lr_scheduler.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/common/lr_scheduler.py",
+      "upstream_sha256": "3e91c244c0be4a4d758388e6db5882b9d616467239f5eef99a2d2d0e2a5636eb",
+      "release_sha256": "3e91c244c0be4a4d758388e6db5882b9d616467239f5eef99a2d2d0e2a5636eb",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/common/module_attr_mixin.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/common/module_attr_mixin.py",
+      "upstream_sha256": "37bb26e0ac9bcba6161dba613929d9d3f475f2bba683885fcb49df323d6dade7",
+      "release_sha256": "37bb26e0ac9bcba6161dba613929d9d3f475f2bba683885fcb49df323d6dade7",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/common/normalizer.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/common/normalizer.py",
+      "upstream_sha256": "5a64eb5a8869bf3c0779ea68266214267ab366c52bc032b25716024c9be2bfe9",
+      "release_sha256": "5a64eb5a8869bf3c0779ea68266214267ab366c52bc032b25716024c9be2bfe9",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/diffusion/conditional_unet1d.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/diffusion/conditional_unet1d.py",
+      "upstream_sha256": "bb27f846fd8f6941e602ee5153444698e31e7c36bf2ebde55f7fbde29d6c950d",
+      "release_sha256": "bb27f846fd8f6941e602ee5153444698e31e7c36bf2ebde55f7fbde29d6c950d",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/diffusion/conv1d_components.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/diffusion/conv1d_components.py",
+      "upstream_sha256": "4342ecb9391ffd053aadf38d4c833b5a7d68b79b442572fd1d786c07f1a9f12e",
+      "release_sha256": "4342ecb9391ffd053aadf38d4c833b5a7d68b79b442572fd1d786c07f1a9f12e",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/diffusion/ema_model.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/diffusion/ema_model.py",
+      "upstream_sha256": "c6f1ae757bb2b10e5d20d5875d9c8c7a1c620aa4ecea6424a87b4b1bea76bd1a",
+      "release_sha256": "c6f1ae757bb2b10e5d20d5875d9c8c7a1c620aa4ecea6424a87b4b1bea76bd1a",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/diffusion/mask_generator.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/diffusion/mask_generator.py",
+      "upstream_sha256": "cf6bd427d1e78987d3266a6853af003f2f1e2ba80ebe691c7e22e0c3ee624810",
+      "release_sha256": "cf6bd427d1e78987d3266a6853af003f2f1e2ba80ebe691c7e22e0c3ee624810",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/diffusion/positional_embedding.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/diffusion/positional_embedding.py",
+      "upstream_sha256": "87eaca54c0037e6084c6401425e9548b141366be3e5ab1544a6fdd24ae7d4e59",
+      "release_sha256": "87eaca54c0037e6084c6401425e9548b141366be3e5ab1544a6fdd24ae7d4e59",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/model/vision/pointnet_extractor.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/model/vision/pointnet_extractor.py",
+      "upstream_sha256": "91c4d446dbff22fe3c0feac345930b1c76fac19d22d090afeae041b3f2919440",
+      "release_sha256": "7570c9fe6e7942a134b39e80c6a62bf4a3fd189ca55201e06401a665624a9b59",
+      "status": "adapted"
+    },
+    "diffusion_policy_3d/policy/base_policy.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/policy/base_policy.py",
+      "upstream_sha256": "9b761fe29f5850cda4d2b55e4e79a9960700036bcd6986d097f1210749da7696",
+      "release_sha256": "9b761fe29f5850cda4d2b55e4e79a9960700036bcd6986d097f1210749da7696",
+      "status": "unchanged"
+    },
+    "diffusion_policy_3d/policy/dp3.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/policy/dp3.py",
+      "upstream_sha256": "ada91ecb40dccfb4d43ec5d6e44a03c0995b5e0498b30674fb8ff948c3a6b452",
+      "release_sha256": "c52eb48458ff3ba5b116b0994eb2eb8d82e388f089bc6d762a138f647b9dd8a7",
+      "status": "adapted"
+    },
+    "train_dp3.py": {
+      "source_path": "policy/DP3/3D-Diffusion-Policy/train_dp3.py",
+      "upstream_sha256": "07a77fb7b94fe2fc404db55cd8f852885f6ab7036d5e65939080c0cbd06d76e1",
+      "release_sha256": "0adb348346f055bc624f34140a9102351e169a2e91dbaf00e4d430c365346567",
+      "status": "adapted"
+    }
+  },
+  "release_note": "Independent source copies with integrated assignment; see README.md for adaptations. No source Git history or data was copied."
+}

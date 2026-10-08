@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "idp-dp-backend"
+version = "0.1.0"
+description = "Bundled DP backend with Immiscible Diffusion training"
+requires-python = ">=3.9,<3.11"
+license = {file = "LICENSE"}
+
+[tool.setuptools]
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "licenses/*.txt"]
+
+[tool.setuptools.packages.find]
+include = ["diffusion_policy*"]
+
+[tool.setuptools.package-data]
+"*" = ["config/*.yaml", "config/task/*.yaml"]

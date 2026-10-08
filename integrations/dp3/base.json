@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/RoboTwin-Platform/RoboTwin",
+  "commit": "958a6d2910a0262f5531fcdeb7fffae4184bb586",
+  "files": {
+    "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/policy/dp3.py": {
+      "base_sha256": "ada91ecb40dccfb4d43ec5d6e44a03c0995b5e0498b30674fb8ff948c3a6b452"
+    },
+    "policy/DP3/3D-Diffusion-Policy/train_dp3.py": {
+      "base_sha256": "07a77fb7b94fe2fc404db55cd8f852885f6ab7036d5e65939080c0cbd06d76e1"
+    },
+    "policy/DP3/3D-Diffusion-Policy/diffusion_policy_3d/config/robot_dp3.yaml": {
+      "base_sha256": "87a56e036b9968342fd7044f9a0ce6f9e989a20a31ce0dc9bc7ff968f318ef1f"
+    }
+  }
+}
