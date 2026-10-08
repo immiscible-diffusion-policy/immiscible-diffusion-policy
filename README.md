@@ -1,8 +1,26 @@
 # Immiscible Diffusion Policy
 
-Implementation of **Immiscible Diffusion Policy: Preserving Multimodal Robot Actions through Label-Free Noise Assignment**.
+Official repository for **Immiscible Diffusion Policy: Preserving Multimodal Robot Actions through Label-Free Noise Assignment**.
 
-[Paper](https://arxiv.org/abs/2610.09369) · [Train DP](backends/dp/README.md) · [Train DP3](backends/dp3/README.md)
+**Under review for ICRA 2027.**
+
+[Paper](https://arxiv.org/abs/2610.09369)
+
+## Overview
+
+Robot demonstrations can contain multiple valid ways to complete the same task, such as grasping an object with either hand. Yet a diffusion policy can collapse to one action modality even when the demonstrations are balanced. Our work connects this behavior to mixing between diffusion paths induced by independent action-noise pairing during training.
+
+**Immiscible Diffusion Policy changes how action chunks are paired with Gaussian noise during training.** Within each batch, we:
+
+1. Sample a pool of Gaussian noise and compute distances to the action chunks in a standardized action space.
+2. Use a one-to-one Hungarian assignment to minimize the total action-noise distance.
+3. Train with the reassigned noise using the existing diffusion objective.
+
+This assignment aims to keep noise-to-action paths more distinct and preserve multiple demonstrated behaviors. It reuses every sampled noise tensor exactly once, requires **no modality labels**, and leaves the **policy architecture and inference procedure unchanged**. The method integrates with both Diffusion Policy (DP) and 3D Diffusion Policy (DP3).
+
+See [Algorithm details](#algorithm-details) for the matching cost, normalization, and training code.
+
+## Implementation
 
 This repository includes the necessary DP and DP3 source code with Immiscible Diffusion already integrated. You can train on your own data without cloning another policy repository or applying a patch. **Datasets and pretrained checkpoints are not included.** This is a method and training-code release, not a full reproduction package for the paper's benchmark tables or robot experiments.
 
@@ -13,6 +31,7 @@ This repository includes the necessary DP and DP3 source code with Immiscible Di
 | Understand assignment without a dataset | CPU example below |
 | Train low-dimensional or RGB DP | [backends/dp](backends/dp/README.md) |
 | Train point-cloud DP3 | [backends/dp3](backends/dp3/README.md) |
+| Deploy image-based DP on G1 | [deployment/g1](deployment/g1/README.md) |
 | Modify an external upstream checkout | [Optional DP patch](integrations/diffusion_policy/README.md), [optional DP3 patch](integrations/dp3/README.md) |
 
 The backends include actual encoders, UNets, datasets, normalization, training, EMA, checkpoints, and inference. DP includes Push-T rollout evaluation. DP3 includes offline evaluation and a policy interface; its RoboTwin simulator adapter is external. An optional [G1 deployment module](deployment/g1/README.md) provides image-DP checkpoint loading, camera/state preprocessing, and the robot adapter for the two real-world tasks; the low-level controller and SDK remain external.
@@ -21,6 +40,7 @@ The backends include actual encoders, UNets, datasets, normalization, training, 
 immiscible_diffusion_policy/  shared assignment and checkpoint/evaluation helpers
 backends/dp/                integrated lowdim/RGB DP and Push-T evaluation
 backends/dp3/               integrated point-cloud DP3 and offline evaluation
+deployment/g1/             optional G1 image-DP deployment and configuration
 environments/              separate backend dependency recipes
 examples/                  minimal CPU training-step demonstration
 scripts/smoke_backend.py    temporary-data training/resume/inference checks
@@ -70,7 +90,7 @@ python scripts/smoke_backend.py dp3
 
 Smoke checks create random replay buffers and small training checkpoints in a temporary directory, test training/resume/inference, and then delete the directory. They do not ship or download data, and are not task-performance experiments. Recipes record tested library versions; fresh Conda solves and GPU training have not been validated. Backend READMEs provide data schemas, vanilla/Immiscible launch commands, and evaluation instructions. The optional checkpoint/evaluation helpers in the core package require backend dependencies.
 
-## Algorithm
+## Algorithm details
 
 Let `actions` be dataset-normalized action chunks of shape `[batch, horizon, action_dim]`. Independently draw one Gaussian noise tensor of the same shape for each chunk. After a configurable warm-up:
 
