@@ -2,8 +2,6 @@
 
 Official repository for **Immiscible Diffusion Policy: Preserving Multimodal Robot Actions through Label-Free Noise Assignment**.
 
-**Under review for ICRA 2027.**
-
 [Paper](https://arxiv.org/abs/2610.09369)
 
 ## Overview
